@@ -1,5 +1,7 @@
 package methods2;
 
+import java.util.Iterator;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -9,25 +11,36 @@ public class Main {
 		
 		String yeniMesaj = sehirVer();
 		System.out.println(yeniMesaj);
-		int sayi = Topla(5,7);
+		int sayi = topla(5,7);
 		System.out.println(sayi);
+		int toplam = topla2(1,2,3,4,5,6,8);
+		System.out.println(toplam);
 
 	}
 	
-	public static void Add() {
+	public static void add() {
 		System.out.println("Added !");
 	}
 	
-	public static void Delete() {
+	public static void delete() {
 		System.out.println("Deleted !");
 	}
 	
-	public static void Update () {
+	public static void update () {
 		System.out.println("Epdated !");
 	}
-	public static int Topla (int sayi1 , int sayi2) {
+	public static int topla (int sayi1 , int sayi2) {
 		return sayi1 + sayi2;
 	}
+	
+	public static int topla2(int... sayilar) { 
+		int toplam =0;
+		for (int sayi : sayilar) {
+			toplam +=sayi;
+		}
+		return toplam;
+	}
+	
 	public static String sehirVer () {
 		return "Ankara";
 	}
